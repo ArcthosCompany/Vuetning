@@ -4,7 +4,7 @@
             {{ header }}
         </h4>
         <ul aria-labelledby="treeheading" class="slds-tree" role="tree">
-            <slds-tree-node v-for="(child, index) in tree.children" :key="child.label + '' + index + '' + 1" :node="child" :level="1"/>
+            <slds-tree-node v-for="(child, index) in tree.children" :key="child.label + '' + index + '' + 1" :node="child" parent="root" :level="1"/>
         </ul>
     </div>
 </template>
