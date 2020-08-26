@@ -1,35 +1,37 @@
 <template>
-    <div class="slds-notify slds-notify_toast" :class="variant" role="status">
+    <div class="slds-notify_container slds-is-relative">
+        <div class="slds-notify slds-notify_toast" :class="variant" role="status">
 
-        <!-- Icon -->
-        <slds-icon
-            v-if="icon != null"
-            :icon="icon"
-            small
-            inverse
-            class="slds-m-right_small slds-no-flex slds-align-top"
-            :class="iconVariant"/>
-
-        <!-- Content -->
-        <div class="slds-notify__content">
-
-            <h2 class="slds-text-heading_small">
-                <slot name="heading"/>
-            </h2>
-
-            <slot name="details"/>
-
-        </div>
-
-        <!-- Close button -->
-        <div class="slds-notify__close">
-            <slds-button-icon
-                icon="utility:close"
-                large
+            <!-- Icon -->
+            <slds-icon
+                v-if="icon != null"
+                :icon="icon"
+                small
                 inverse
-                @click="onClickClose"/>
-        </div>
+                class="slds-m-right_small slds-no-flex slds-align-top"
+                :class="iconVariant"/>
 
+            <!-- Content -->
+            <div class="slds-notify__content">
+
+                <h2 class="slds-text-heading_small">
+                    <slot name="heading"/>
+                </h2>
+
+                <slot name="details"/>
+
+            </div>
+
+            <!-- Close button -->
+            <div class="slds-notify__close">
+                <slds-button-icon
+                    icon="utility:close"
+                    large
+                    inverse
+                    @click="onClickClose"/>
+            </div>
+
+        </div>
     </div>
 </template>
 
